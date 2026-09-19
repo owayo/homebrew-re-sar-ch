@@ -1,15 +1,15 @@
 class ReSarCh < Formula
   desc "Standalone parser for sysstat sar binary data files"
   homepage "https://github.com/owayo/re-sar-ch"
-  url "https://github.com/owayo/re-sar-ch/archive/refs/tags/v26.9.103.tar.gz"
-  sha256 "e3c9fd16de9e1e7912e79ac9b5523f996bdf0ef2f68f055100cbdff289a7175c"
+  url "https://github.com/owayo/re-sar-ch/archive/refs/tags/v26.9.104.tar.gz"
+  sha256 "a09b8108109e5bacb124e1b1fd4f8d4eed45af359a9d7e53e1132fd6763fa44e"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.103"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "1b44cbde964a7e4542575f7b852d0a1940b4a95ab2661d1af4ebbc2621ca83b6"
-    sha256 cellar: :any_skip_relocation, sonoma: "34d79122ae049c5e7e2f2de6d668e74fe132fa02523c78eba0fc3a29f26e9e63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d0c6576491bb3b12dd4f1464d0ed3e8078dacf4bc77dfec12ffdf731a776aba7"
+    root_url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.104"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7a1c6c85dcdf58dfbb504fe7f02afb7913d84cee61d001d8132d26947bc4c430"
+    sha256 cellar: :any_skip_relocation, sonoma: "82d9e7f54646053ba669987e5e94f65a4c3ded9bd3677949f4c18adbb5ac4031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "201cb066f01cdc9d128f0e63dd0bc07ae837ba89abec4d3679294d08eba34d22"
   end
 
   depends_on "rust" => :build
