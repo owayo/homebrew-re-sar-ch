@@ -1,24 +1,33 @@
 class ReSarCh < Formula
   desc "Standalone parser for sysstat sar binary data files"
   homepage "https://github.com/owayo/re-sar-ch"
-  url "https://github.com/owayo/re-sar-ch/archive/refs/tags/v26.9.106.tar.gz"
-  sha256 "8ea870a69b4f495c82b39acceadfa6eb509de4f17e784a79738ea3929cd143b0"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.106"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "619391f6a2fed79a6a125a98c0aa9399c6b5db14b21cbcd4869658f057177c25"
-    sha256 cellar: :any_skip_relocation, sonoma: "bd098e053c21a5db0fb08788d51d77b79a02513d8a07c9f6ef43d0b9f353dfb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "134df07b49814ad178f8702c2608bdfe9fe4bb104f935cebfc6f182adc28edf3"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.107/resarch-aarch64-apple-darwin.tar.gz"
+      sha256 "bb506f7e469c9428f32b4b7bcb8f3918608f1dc1e4e4193e406ffcedeaa8d775"
+    else
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.107/resarch-x86_64-apple-darwin.tar.gz"
+      sha256 "dfdc7e4f9f5818a80bbbafb14624356504d918311f911742c086e5e67d4a6fb3"
+    end
   end
 
-  depends_on "rust" => :build
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.107/resarch-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a96582f4a26512faa5e894b83e8f0a39471f119c473f0df4e5dae2b4c38a780f"
+    else
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.107/resarch-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "556196ce8a6f9e81bbaacedcf0007220ccfada4a738cca4fc4bec44a0fa6ba04"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args, "--bin", "resarch"
+    bin.install "resarch"
   end
 
   test do
-    system "#{bin}/resarch", "--version"
+    assert_match version.to_s, shell_output("#{bin}/resarch --version")
   end
 end
