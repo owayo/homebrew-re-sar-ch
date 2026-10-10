@@ -5,21 +5,21 @@ class ReSarCh < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.110/resarch-aarch64-apple-darwin.tar.gz"
-      sha256 "a70e805073d4e8a57f66be10a2b67f5c4bc130583f1cf604c1c9c13efb47b074"
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.10.100/resarch-aarch64-apple-darwin.tar.gz"
+      sha256 "9cd26faa3006e68d45e2687f55c6a19d79043102de891b2c065c4f10fa8bc1ef"
     else
-      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.110/resarch-x86_64-apple-darwin.tar.gz"
-      sha256 "7de9f8814f41e66f76e7ae3013045ee3d131609063565f4693a6b0e835dfc5fe"
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.10.100/resarch-x86_64-apple-darwin.tar.gz"
+      sha256 "4f002a2b53d2a84552fdb6b872e968eb002ce7f1fcbb8ae07be4ba9ce7437654"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.110/resarch-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "30a3158665d75919e171fca4e87d1af26c2817e65aaf459b4d2257af03cf8358"
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.10.100/resarch-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "48af436022b6e95566d26a2c5dd7c270ebdaf3dd7de01438ecbbd7a3aafb33cc"
     else
-      url "https://github.com/owayo/re-sar-ch/releases/download/v26.9.110/resarch-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a9d28377bf9d1f045865de015e024769c27d89a4a350881716da29c226e2f2a1"
+      url "https://github.com/owayo/re-sar-ch/releases/download/v26.10.100/resarch-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "733f636ce490865c08ecd5ac45466f33fd10ab4286f75f79ca5aaa1593b8f49f"
     end
   end
 
